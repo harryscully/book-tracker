@@ -33,6 +33,7 @@ model Book {
   status Status @default(WANT_TO_READ)
   notes String?
   updatedAt DateTime @updatedAt
+  @@unique([title,userId])
 }
 
 enum Status {
