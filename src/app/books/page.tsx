@@ -9,11 +9,24 @@ export default function Books() {
 
     if (isError) return <p>Error: {error.message}</p>
 
+    const bookCards = data.map((book: BookModel) => (
+        <div key={book.id} className="card card-border bg-base-100 w-96">
+            <div className="card-body">
+                <h2 className="card-title">
+                    {book.title}
+                    <div className="badge badge-secondary">{book.status}</div>
+                </h2>
+                <p>{book.author}</p>
+                <div className="card-actions justify-end">
+                    <div className="badge badge-outline">{book.genre}</div>
+                </div>
+            </div>
+        </div>
+    ))
+
     return (
-        <ul>
-            {data.map((book:BookModel) => (
-                <li key={book.id}>{book.title}</li>
-            ))}
-        </ul>
+        <div className="flex flex-col gap-3 justify-center items-center">
+            {bookCards}
+        </div>
     )
 }
