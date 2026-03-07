@@ -1,6 +1,6 @@
 "use client"
 import { useBooks } from "@/hooks/useBooks"
-import { BookModel } from "../../../generated/prisma/models/Book"
+import type { BookModel } from "../../../generated/prisma/models/Book"
 
 export default function Books() {
     const { isPending, isError, data, error } = useBooks()
