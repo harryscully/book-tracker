@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="bumblebee">
-      <body className="max-h-svh flex flex-col justify-center">
+      <body className="min-h-svh">
         <QueryProvider>
           {children}
         </QueryProvider>
