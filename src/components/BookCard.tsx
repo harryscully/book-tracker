@@ -14,15 +14,15 @@ const statusFormatted = {
 
 export default function BookCard({ book }: { book: BookModel }) {
     return (
-        <div className="card card-border bg-base-100">
+        <div className="card card-border bg-base-100 border-base-300">
             <div className="card-body">
-                <h2 className="card-title">
+                <h2 className="card-title flex-wrap">
                     {book.title}
                     <div className={`badge ${statusColours[book.status]}`}>{statusFormatted[book.status]}</div>
                 </h2>
                 <p>{book.author}</p>
                 <div className="card-actions justify-end">
-                    <div className="badge badge-outline">{book.genre}</div>
+                    <div className="badge badge-outline font-semibold uppercase text-info">{book.genre}</div>
                 </div>
             </div>
         </div>

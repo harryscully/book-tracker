@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="bumblebee">
-      <body className="min-h-svh">
+      <body className="min-h-svh bg-base-200">
         <QueryProvider>
           {children}
         </QueryProvider>
