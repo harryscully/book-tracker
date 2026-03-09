@@ -18,10 +18,13 @@ export default function RootLayout({
       <body className="min-h-svh bg-base-200 flex flex-col">
         <QueryProvider>
           <Navbar />
-          
+          <main className="flex-1">
             {children}
-          
+          </main>
         </QueryProvider>
+        <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+          <p className="text-sm">book-tracker © 2026</p>
+        </footer>
       </body>
     </html>
   );

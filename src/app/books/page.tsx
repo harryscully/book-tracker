@@ -6,7 +6,11 @@ import BookCard from "@/components/BookCard"
 export default function Books() {
     const { isPending, isError, data, error } = useBooks()
 
-    if (isPending) return <p>Loading...</p>
+    if (isPending) return (
+        <div className="flex flex-1 justify-center items-center">
+            <span className="loading loading-spinner text-secondary"></span>
+        </div>
+    )
 
     if (isError) return <p>Error: {error.message}</p>
 

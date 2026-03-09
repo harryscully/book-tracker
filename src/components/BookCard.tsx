@@ -29,7 +29,7 @@ export default function BookCard({ book }: { book: BookModel }) {
                 <p className="mb-4">{book.author}</p>
 
                 <div className="card-actions justify-between items-center">
-                    <div className="dropdown dropdown-hover">
+                    <div className="dropdown dropdown-right">
                         <div tabIndex={0} role="button" className="btn p-0 h-6 w-6">
                             <Ellipsis size={16} />
                         </div>

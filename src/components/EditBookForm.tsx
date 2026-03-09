@@ -32,7 +32,11 @@ export default function EditBookForm({id}:{id:string}) {
         }
     })
 
-    if (isPending) return <p>Loading...</p>
+    if (isPending) return (
+        <div className="flex flex-1 justify-center items-center">
+            <span className="loading loading-spinner text-secondary"></span>
+        </div>
+    )
 
     return (
         <div className="w-full max-w-lg card card-border bg-base-100 border-base-300">
