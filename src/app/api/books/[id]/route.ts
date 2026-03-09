@@ -27,5 +27,12 @@ export async function PATCH(request: Request, { params }: { params: Promise<{id:
         )
         return NextResponse.json(book, { status: 200 })
     }
-    
+}
+
+export async function GET(request: Request, { params }: { params: Promise<{id: string}>  }) {
+    const { id } = await params
+    const book = await prisma.book.findUnique({
+        where: {id: Number(id)}
+    })
+    return NextResponse.json(book)
 }
