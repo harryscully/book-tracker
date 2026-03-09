@@ -20,7 +20,7 @@ export default function AddBookForm() {
     })
 
     return (
-        <div className="w-1/3 card card-border bg-base-100 border-base-300">
+        <div className="w-full max-w-lg card card-border bg-base-100 border-base-300">
             <div className="card-body">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <fieldset className="fieldset">

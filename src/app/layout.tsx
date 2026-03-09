@@ -15,10 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="bumblebee">
-      <body className="min-h-svh bg-base-200">
+      <body className="min-h-svh bg-base-200 flex flex-col">
         <QueryProvider>
           <Navbar />
-          {children}
+          
+            {children}
+          
         </QueryProvider>
       </body>
     </html>
