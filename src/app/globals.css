@@ -35,3 +35,21 @@
   --depth: 0;
   --noise: 0;
 }
+
+.highlight {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+.highlight::after {
+  position: absolute;
+  content: '';
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: var(--color-secondary);
+  display: block;
+  z-index: -1;
+}
