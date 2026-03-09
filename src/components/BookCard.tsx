@@ -22,7 +22,7 @@ export default function BookCard({ book }: { book: BookModel }) {
                 </h2>
                 <p>{book.author}</p>
                 <div className="card-actions justify-end">
-                    <div className="badge badge-outline font-semibold uppercase text-info">{book.genre}</div>
+                    <div className="badge badge-outline font-semibold uppercase text-info text-xs">{book.genre}</div>
                 </div>
             </div>
         </div>

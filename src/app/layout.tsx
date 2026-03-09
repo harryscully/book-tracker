@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import QueryProvider from "@/components/QueryProvider";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Book Tracker",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en" data-theme="bumblebee">
       <body className="min-h-svh bg-base-200">
         <QueryProvider>
+          <Navbar />
           {children}
         </QueryProvider>
       </body>
