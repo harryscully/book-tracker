@@ -1,12 +1,12 @@
 import { prisma } from "@/lib/prisma"
 import { NextResponse } from "next/server"
 
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
-    const bookId = params.id
+export async function DELETE(request: Request, { params }: { params: Promise<{id: string}>  }) {
+    const { id } = await params
     await prisma.book.delete({
         where: {
-            id: Number(bookId)
+            id: Number(id)
         }
     })
-    return NextResponse.json(null, { status: 204 })
+    return NextResponse.json({message: "deleted"}, { status: 202 })
 }
