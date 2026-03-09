@@ -1,7 +1,8 @@
 "use client"
 import type { BookModel } from "../../generated/prisma/models/Book"
 import { useDeleteBook } from "@/hooks/useDeleteBook"
-import { Trash2 } from "lucide-react"
+import { Trash2, Ellipsis, SquarePen } from "lucide-react"
+import Link from "next/link"
 
 const statusColours = {
     READING: "badge-info",
@@ -26,17 +27,25 @@ export default function BookCard({ book }: { book: BookModel }) {
                     <div className={`badge ${statusColours[book.status]}`}>{statusFormatted[book.status]}</div>
                 </h2>
                 <p className="mb-4">{book.author}</p>
+
                 <div className="card-actions justify-between items-center">
-                    <button
-                        onClick={() => {
-                            if (window.confirm("Delete this book?")) {
-                                mutate()
-                            }
-                        }}
-                        className="btn btn-square btn-error text-white h-8 w-8"
-                    >
-                        <Trash2 size={16}/>
-                    </button>
+                    <div className="dropdown dropdown-hover">
+                        <div tabIndex={0} role="button" className="btn p-0 h-6 w-6">
+                            <Ellipsis size={16} />
+                        </div>
+                        <ul tabIndex={-1} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                            <li><Link href={`/books/${book.id}/edit`}><SquarePen size={16} />Edit</Link></li>
+                            <li><button
+                                onClick={() => {
+                                    if (window.confirm("Delete this book?")) {
+                                        mutate()
+                                    }
+                                }}
+                            >
+                                <Trash2 size={16} />Delete
+                            </button></li>                            
+                        </ul>
+                    </div>
                     <div className="badge badge-outline font-semibold uppercase text-info text-xs">{book.genre}</div>
                 </div>
             </div>
